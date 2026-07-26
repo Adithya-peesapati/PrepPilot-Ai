@@ -20,7 +20,6 @@ PrepPilot AI solves this problem using Generative AI by providing customized pra
 
 - 👤 User Profile Creation
 - 🎯 Preparation Goal Selection
-  - Semester Exams
   - Placement Interviews
   - Coding Interviews
   - Aptitude Tests
@@ -103,10 +102,9 @@ PrepPilot AI solves this problem using Generative AI by providing customized pra
 **Team Suraksha**
 
 Members:
-- Member 1
-- Member 2
-- Member 3
-
+- PEESAPATI BALA SHANMUKHA ADITHYA
+- VEERA PRANAV ADITYA
+- SIVA MURALI KRISHNA MUTYALA
 ---
 
 ## 📄 License
