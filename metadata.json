@@ -1,0 +1,6 @@
+{
+  "name": "PrepPilot AI",
+  "description": "AI-powered study & interview coaching platform with real-time feedback, offline caching, adaptive practice questions, AI interview simulation, and personalized activity analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

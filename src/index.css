@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #050816;
+    --text-primary: #e1e2ed;
+    --text-muted: #c3c6d7;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-hover-bg: rgba(255, 255, 255, 0.06);
+    --card-surface: #1d1f27;
+    --card-surface-low: #11131b;
+  }
+
+  .light {
+    --bg-base: #f8fafc;
+    --text-primary: #0f172a;
+    --text-muted: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --glass-hover-bg: rgba(255, 255, 255, 0.95);
+    --card-surface: #ffffff;
+    --card-surface-low: #f1f5f9;
+  }
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphic card styling */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--glass-hover-bg);
+  border-color: rgba(180, 197, 255, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(180, 197, 255, 0.15);
+}
+
+/* Glowing text and borders */
+.glow-text {
+  text-shadow: 0 0 20px rgba(180, 197, 255, 0.4);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(180, 197, 255, 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.inner-glow {
+  box-shadow: inset 0 0 12px rgba(180, 197, 255, 0.1);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 197, 255, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 197, 255, 0.4);
+}
+
+/* Floating animation */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+/* Waveform pulse for voice mode */
+@keyframes wavePulse {
+  0%, 100% {
+    height: 8px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+.waveform-bar {
+  animation: wavePulse 1.2s infinite ease-in-out;
+}

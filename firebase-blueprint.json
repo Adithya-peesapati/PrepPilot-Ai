@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Student user profile information, academic track, and progress metrics.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 100 },
+        "college": { "type": "string", "maxLength": 150 },
+        "degreeBranch": { "type": "string", "maxLength": 150 },
+        "yearOfStudy": { "type": "string", "maxLength": 50 },
+        "targetCompany": { "type": "string", "maxLength": 150 },
+        "goal": { "type": "string", "maxLength": 150 },
+        "skillsKnown": { "type": "array" },
+        "xpPoints": { "type": "number" },
+        "currentLevel": { "type": "number" },
+        "streakDays": { "type": "number" },
+        "totalSessionsCompleted": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "fullName", "email"]
+    },
+    "EvaluationReport": {
+      "title": "EvaluationReport",
+      "description": "AI evaluation report generated after completing a practice drill.",
+      "type": "object",
+      "properties": {
+        "reportId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "overallScore": { "type": "number" },
+        "accuracyPercentage": { "type": "number" },
+        "strengths": { "type": "array" },
+        "weakAreas": { "type": "array" },
+        "subject": { "type": "string", "maxLength": 100 },
+        "difficulty": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["reportId", "userId", "overallScore", "subject"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Collection of user profiles keyed by Firebase Auth UID or user ID."
+    },
+    "/evaluations/{reportId}": {
+      "schema": { "$ref": "#/entities/EvaluationReport" },
+      "description": "Collection of practice drill test evaluation reports."
+    }
+  }
+}
